@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>For Misty ♡</title>
+
+  <meta
+    name="description"
+    content="A little birthday surprise made especially for Misty."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./dist/output.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       AMBIENT BACKGROUND
+  ====================================================== -->
+
+  <div class="ambient-background">
+    <div class="luxury-orb orb-one"></div>
+    <div class="luxury-orb orb-two"></div>
+    <div class="luxury-orb orb-three"></div>
+    <div class="luxury-orb orb-four"></div>
+  </div>
+
+  <canvas id="particleCanvas"></canvas>
+
+  <div id="heartExplosion"></div>
+
+  <div id="mouseGlow"></div>
+
+  <div class="film-grain"></div>
+
+
+  <!-- =====================================================
+       PERMANENT FLOATING HEARTS
+  ====================================================== -->
+
+  <div class="ambient-hearts" aria-hidden="true">
+
+    <span class="ambient-heart ah-1">♡</span>
+    <span class="ambient-heart ah-2">♥</span>
+    <span class="ambient-heart ah-3">♡</span>
+    <span class="ambient-heart ah-4">♡</span>
+    <span class="ambient-heart ah-5">♥</span>
+    <span class="ambient-heart ah-6">♡</span>
+    <span class="ambient-heart ah-7">♡</span>
+    <span class="ambient-heart ah-8">♥</span>
+    <span class="ambient-heart ah-9">♡</span>
+    <span class="ambient-heart ah-10">♡</span>
+    <span class="ambient-heart ah-11">♥</span>
+    <span class="ambient-heart ah-12">♡</span>
+
+  </div>
+
+
+  <!-- =====================================================
+       OPENING SCREEN
+  ====================================================== -->
+
+  <section id="openingScreen" class="opening-screen">
+
+    <div class="opening-stars" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+
+    <!-- Rotating luxury heart aura -->
+
+    <div class="opening-aura">
+
+      <div class="aura-ring ring-one"></div>
+      <div class="aura-ring ring-two"></div>
+      <div class="aura-ring ring-three"></div>
+      <div class="aura-ring ring-four"></div>
+
+      <div class="aura-heart">
+        <span>♡</span>
+      </div>
+
+    </div>
+
+
+    <!-- Floating decorative hearts -->
+
+    <div class="floating-heart heart-1">♡</div>
+    <div class="floating-heart heart-2">♥</div>
+    <div class="floating-heart heart-3">♡</div>
+    <div class="floating-heart heart-4">♡</div>
+    <div class="floating-heart heart-5">♥</div>
+    <div class="floating-heart heart-6">♡</div>
+    <div class="floating-heart heart-7">♡</div>
+    <div class="floating-heart heart-8">♥</div>
+
+
+    <!-- Premium Glass Card -->
+
+    <div class="opening-card">
+
+      <div class="opening-card-shine"></div>
+
+      <div class="opening-card-border"></div>
+
+      <div class="opening-card-inner">
+
+        <div class="mini-heart-row">
+          <span>♡</span>
+          <span>✦</span>
+          <span>♡</span>
+        </div>
+
+        <p class="opening-mini">
+          A LITTLE SOMETHING
+        </p>
+
+        <div class="opening-line"></div>
+
+        <h1 class="opening-name">
+          Hey, Misty
+          <span>♡</span>
+        </h1>
+
+        <p class="opening-description">
+          I made something small for you...
+          <br />
+          something I wanted you to see today.
+        </p>
+
+
+        <div class="opening-date">
+
+          <span class="date-line"></span>
+
+          <span class="date-number">
+            24
+            <small>SEPTEMBER</small>
+          </span>
+
+          <span class="date-line"></span>
+
+        </div>
+
+
+        <!-- Premium Button -->
+
+        <button
+          id="openSurprise"
+          class="premium-open-button"
+          type="button"
+        >
+
+          <span class="button-border"></span>
+
+          <span class="button-glow"></span>
+
+          <span class="button-content">
+            <span class="button-heart">♡</span>
+            <span>Open Your Surprise</span>
+            <span class="button-arrow">→</span>
+          </span>
+
+        </button>
+
+
+        <div class="opening-footer">
+
+          <span class="footer-dot"></span>
+
+          <span>
+            Made especially for you
+          </span>
+
+          <span class="footer-dot"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="scroll-hint">
+      <span>Begin</span>
+      <span class="scroll-arrow">↓</span>
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       AUDIO
+  ====================================================== -->
+
+  <audio
+    id="backgroundMusic"
+    loop
+    preload="auto"
+  >
+    <source
+      src="./assets/music/birthday-song.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
+
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+  <main id="birthdayReveal">
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="hero-section">
+
+      <div class="hero-floating-hearts" aria-hidden="true">
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+      </div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          24 SEPTEMBER
+        </p>
+
+        <h1 >
+          Happy Birthday
+          <span >Misty ♡</span>
+        </h1>
+
+        <p class="hero-description">
+          Today is yours.
+          So for a little while,
+          let me make it all about you.
+        </p>
+
+        <div class="hero-divider">
+          <span></span>
+          <i>♡</i>
+          <span></span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         OUR STORY
+    ==================================================== -->
+
+    <section class="story-section">
+
+      <div class="section-heading">
+
+        <div class="section-heart">
+          ♡
+        </div>
+
+        <p class="eyebrow">
+          OUR LITTLE STORY
+        </p>
+
+        <h2>
+          Some moments are
+          <em>worth remembering.</em>
+        </h2>
+
+        <p>
+          Nothing was planned.
+          Some things simply happened naturally.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <article class="story-item">
+
+          <div class="timeline-dot">
+            <span>01</span>
+          </div>
+
+          <div class="story-content">
+
+            <div class="story-heart">♡</div>
+
+            <p class="story-label">
+              TUMPA'S WEDDING
+            </p>
+
+            <h3>
+              The first time I saw you.
+            </h3>
+
+            <p>
+              I didn't know it then,
+              but that little moment would
+              eventually become the beginning
+              of something memorable.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="story-item">
+
+          <div class="timeline-dot">
+            <span>02</span>
+          </div>
+
+          <div class="story-content">
+
+            <div class="story-heart">♡</div>
+
+            <p class="story-label">
+              PUJA'S WEDDING
+            </p>
+
+            <h3>
+              The first conversation.
+            </h3>
+
+            <p>
+              Then came the day we actually
+              talked. A simple conversation,
+              but one I'll always remember.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="story-item">
+
+          <div class="timeline-dot">
+            <span>03</span>
+          </div>
+
+          <div class="story-content">
+
+            <div class="story-heart">♡</div>
+
+            <p class="story-label">
+              CONVERSATIONS
+            </p>
+
+            <h3>
+              Talking became a habit.
+            </h3>
+
+            <p>
+              Somehow, those occasional
+              conversations slowly became
+              regular ones.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="story-item">
+
+          <div class="timeline-dot">
+            <span>04</span>
+          </div>
+
+          <div class="story-content">
+
+            <div class="story-heart">♡</div>
+
+            <p class="story-label">
+              THE DAY WE MET
+            </p>
+
+            <h3>
+              From screens to real life.
+            </h3>
+
+            <p>
+              And then came the day we finally
+              met in person. A simple day,
+              but a special memory.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="story-item">
+
+          <div class="timeline-dot">
+            <span>05</span>
+          </div>
+
+          <div class="story-content">
+
+            <div class="story-heart">♡</div>
+
+            <p class="story-label">
+              TODAY
+            </p>
+
+            <h3>
+              We still talk.
+            </h3>
+
+            <p>
+              And honestly,
+              I really like that.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SOMETHING UNSAID
+    ==================================================== -->
+
+    <section class="feelings-section">
+
+      <div class="feelings-card">
+
+        <div class="feelings-background-heart">
+          ♡
+        </div>
+
+        <div class="feelings-symbol">
+          ♡
+        </div>
+
+        <p class="eyebrow">
+          SOMETHING I NEVER REALLY SAID
+        </p>
+
+        <h2>
+          Some feelings don't
+          <em>arrive all at once.</em>
+        </h2>
+
+        <div class="feelings-text">
+
+          <p>
+            Sometimes they quietly grow through
+            conversations, little moments,
+            familiar smiles, and the simple
+            happiness of having someone around.
+          </p>
+
+          <p>
+            And somewhere along the way,
+            you became someone
+            a little more special.
+          </p>
+
+        </div>
+
+        <div class="tiny-hearts">
+          <span>♡</span>
+          <span>♡</span>
+          <span>♡</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         BIRTHDAY LETTER
+    ==================================================== -->
+
+    <section class="letter-section">
+
+      <div class="letter-wrapper">
+
+        <div class="letter-floating-heart">
+          ♡
+        </div>
+
+        <div class="letter-top">
+
+          <span></span>
+          <span>♡</span>
+          <span></span>
+
+        </div>
+
+
+        <p class="eyebrow">
+          A LITTLE LETTER
+        </p>
+
+        <h2>
+          Dear Misty,
+        </h2>
+
+
+        <div class="letter-body">
+
+          <p>
+            I don't really know where to begin,
+            because some things are easier to feel
+            than to explain.
+          </p>
+
+          <p>
+            From the first time I saw you at
+            Tumpa's wedding, to talking at
+            Puja's wedding, and then somehow
+            talking more and more...
+          </p>
+
+          <p>
+            I never really planned for any of it.
+            It just happened naturally.
+            And somewhere along the way,
+            talking to you became something
+            I genuinely look forward to.
+          </p>
+
+          <p>
+            You became someone a little more
+            special than you probably realize.
+          </p>
+
+          <p>
+            I don't know what the future holds,
+            or where this little story of ours
+            goes from here.
+          </p>
+
+          <p>
+            But I'm genuinely glad that I met you,
+            and I'm glad that our paths crossed.
+          </p>
+
+          <p>
+            So today, on your birthday,
+            I just want to wish you something simple.
+          </p>
+
+          <p class="special-line">
+            Keep smiling.
+            It really suits you.
+          </p>
+
+          <p>
+            May this new year of your life bring
+            you beautiful moments, peaceful days,
+            and plenty of reasons to smile.
+          </p>
+
+        </div>
+
+
+        <div class="letter-signature">
+
+          <p>
+            Happy Birthday, Misty ♡
+          </p>
+
+          <span>
+            24 September
+          </span>
+
+        </div>
+
+
+        <div class="letter-more">
+          There's one more thing ↓
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FINAL CINEMATIC ENDING
+    ==================================================== -->
+
+    <section class="final-section">
+
+      <div class="final-heart-field" aria-hidden="true">
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♡</span>
+      </div>
+
+      <div class="final-glow"></div>
+
+      <div class="final-content">
+
+        <p class="eyebrow">
+          BEFORE YOU GO
+        </p>
+
+        <div class="final-heart">
+          ♡
+        </div>
+
+        <h2>
+          I'm really glad
+          <span>our paths crossed.</span>
+        </h2>
+
+        <p class="final-text">
+          I hope life gives you countless
+          beautiful moments, peaceful days,
+          and every reason to keep smiling.
+        </p>
+
+        <div class="final-divider">
+          <span></span>
+          <i>✦</i>
+          <span></span>
+        </div>
+
+        <p class="final-birthday">
+          Happy Birthday, Misty
+        </p>
+
+        <span class="final-date">
+          24 · 09
+        </span>
+
+        <div class="final-little-hearts">
+          ♡ &nbsp; ♡ &nbsp; ♡
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-heart">
+      ♡
+    </div>
+
+    <p>
+      For Misty ♡
+    </p>
+
+    <span>
+      24 September
+    </span>
+
+  </footer>
+
+
+  <script src="./js/script.js"></script>
+
+</body>
+</html>
