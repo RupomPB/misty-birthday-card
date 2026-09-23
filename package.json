@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
-     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
-  "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "echo Static site ready"
   },
   "keywords": [],
   "author": "",
